@@ -1,0 +1,33 @@
+package Basics;
+
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.chrome.ChromeDriver;
+	public class FlipKartwebPage {
+	
+		public static void main(String[]args) {
+			
+			//Open the browser
+			
+			ChromeDriver driver = new ChromeDriver();
+			
+			//WebDriver  driver = new ChromeDriver();
+			
+			//Maximize the webpage
+			driver.manage().window().maximize();
+			
+			//enter a demo website
+			driver.get("https://www.flipkart.com/");
+			
+			//driver.navigate().to("https://www.flipkart.com/ ");
+			
+			//close the website
+			
+			driver.close();
+			
+			driver.quit();
+		}
+
+	}
+
+
+
