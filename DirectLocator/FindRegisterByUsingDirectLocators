@@ -1,0 +1,29 @@
+package Basics; 
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FindRegisterByUsingDirectLocators {
+	
+		public static void main(String[]args) throws InterruptedException {
+			
+			ChromeDriver driver = new ChromeDriver();
+			
+			driver.manage().window().maximize();
+			
+			driver.get("https://demowebshop.tricentis.com/");
+			
+		//when we go with finding with tag name we get so many tag elements then we can try with different locators.
+			
+		 driver.findElement(By.className("ico-register")).click();//one way
+			
+		//	WebElement anchor = driver.findElement(By.className("ico-register"));
+		//	anchor.click();
+			
+			
+			Thread.sleep(3000);
+			driver.close();
+
+}
+}
