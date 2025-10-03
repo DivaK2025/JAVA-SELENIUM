@@ -1,0 +1,44 @@
+package Basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Assignment4 {
+	public static void main(String[] args) throws InterruptedException
+	{
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demowebshop.tricentis.com/");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.linkText("$25 Virtual Gift Card")).click();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.id("giftcard_2_RecipientName")).sendKeys("Athrava");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("giftcard_2_RecipientEmail")).sendKeys("athravapailwan@gmail.com");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("giftcard_2_SenderName")).sendKeys("Divyarani");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("giftcard_2_SenderEmail")).sendKeys("divyaranikhade@gmail.com");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("giftcard_2_Message")).sendKeys("Hey Mnd Mansa ");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("add-to-cart-button-2")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("topcartlink")).click();
+		Thread.sleep(2000);
+		
+//		driver.findElement(By.name("removefromcart")).click();
+//		Thread.sleep(2000);
+		
+		driver.close();
+		
+	}
+}
