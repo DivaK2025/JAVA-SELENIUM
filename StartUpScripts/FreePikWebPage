@@ -1,0 +1,34 @@
+package Basics;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FreePikWebPage {
+	
+	public static void main(String[]args) {
+		
+		//Open the browser 
+		
+		//ChromeDriver driver = new ChromeDriver();
+		
+		WebDriver driver = new ChromeDriver();
+		
+		//maximize the browser
+		
+		driver.manage().window().maximize();
+		
+		//enter a demo website
+		
+		driver.get("https://www.freepik.com/");
+		
+		driver.navigate().to("https://www.freepik.com/");
+		
+		// close a  website
+		
+		driver.close();
+		
+		driver.quit();
+			
+	}
+
+}
