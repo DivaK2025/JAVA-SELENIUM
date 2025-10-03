@@ -1,0 +1,56 @@
+package Basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AddToCart {
+	
+	public static void main(String[]args)throws InterruptedException
+	{
+	 
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://demowebshop.tricentis.com/");
+		
+		
+		driver.findElement(By.cssSelector(".button-2.product-box-add-to-cart-button")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("giftcard_2_RecipientName")).sendKeys("Divyarani");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("giftcard_2_RecipientEmail")).sendKeys("divyaranikhade@gmail.com");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("giftcard_2_SenderName")).sendKeys("Atharva");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("giftcard_2_SenderEmail")).sendKeys("atharava@gmail.com");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("giftcard_2_Message")).sendKeys("Hii Brooooo..");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("addtocart_2_EnteredQuantity")).clear();
+		driver.findElement(By.id("addtocart_2_EnteredQuantity")).sendKeys("2");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.cssSelector(".button-1.add-to-cart-button")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.cssSelector("a[href='/cart']")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.name("removefromcart")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.cssSelector("input[name='updatecart']")).click();
+		Thread.sleep(2000);
+		
+		driver.close();
+	
+
+	}
+}
