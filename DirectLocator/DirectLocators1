@@ -1,0 +1,49 @@
+package Basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DirectLocators1 {
+    public static void main(String[] args) throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://demowebshop.tricentis.com/");
+        Thread.sleep(3000);
+       
+        /*We can't perform this action bcz their are many anchor tags so it return the first 
+         ** Element from the webpage 
+         ** WebElement anchorTag = driver.findElement(By.tagName("a")); 
+         ** anchorTag.click(); 
+         ** So we perform it by using class name 
+         *WebElement anchorTag = driver.findElement(By.className("ico-register"));
+         * anchorTag.click(); Thread.sleep(3000);
+         *  when the classname contains space between them it gets
+         *   confused that considering them multiple classes 
+         *   WebElement search = driver.findElement(By.className("button-1 search-box-button")); 
+         *   search.click(); */
+        // Locate search field using tagName
+        WebElement searchField = driver.findElement(By.tagName("input"));
+        searchField.sendKeys("Beach Buggy Racing");
+        // When multiple elements exist with same tagName (like <a>), 
+        // it only selects the first match. So better to use className or other locators.
+        WebElement search = driver.findElement(By.className("button-1"));
+        search.click();
+        Thread.sleep(3000);
+        
+        driver.findElement(By.className("ico-register")).click();
+        Thread.sleep(3000);
+
+        driver.findElement(By.className("ico-login")).click();
+        Thread.sleep(3000);
+
+        driver.findElement(By.className("ico-cart")).click();
+        Thread.sleep(3000);
+
+        driver.findElement(By.className("ico-wishlist")).click();
+        Thread.sleep(3000);
+
+        driver.close();
+    }
+}
