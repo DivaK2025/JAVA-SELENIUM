@@ -1,0 +1,37 @@
+package Basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestARegisterPage {
+	
+	public static void main(String[]args) throws InterruptedException{
+		
+	 ChromeDriver driver = new ChromeDriver();
+	 
+	 driver.manage().window().maximize();
+	 driver.get("https://demowebshop.tricentis.com/");
+	 Thread.sleep(1000);
+	 //Click Register link
+	 
+	 driver.findElement(By.className("ico-register")).click();
+	 driver.findElement(By.id("gender-female")).click();
+	 Thread.sleep(1000);
+	 driver.findElement(By.id("FirstName")).sendKeys("Divyarani");
+	 Thread.sleep(1000);
+	 driver.findElement(By.id("LastName")).sendKeys("Khade");
+	 Thread.sleep(1000);
+	 driver.findElement(By.name("Email")).sendKeys("divyaranikhade@gmail.com");
+	 Thread.sleep(1000);
+	 driver.findElement(By.id("Password")).sendKeys("Divyarani@2003");
+	 Thread.sleep(1000);
+	 driver.findElement(By.id("ConfirmPassword")).sendKeys("Divyarani@2003");
+	 Thread.sleep(1000);
+	 driver.findElement(By.name("register_button")).click();
+	 Thread.sleep(1000);
+	 driver.close();
+		
+	}
+
+}
+ 
