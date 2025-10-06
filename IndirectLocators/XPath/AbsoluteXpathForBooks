@@ -1,0 +1,51 @@
+package Basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AbsoluteXpathForBooks {
+
+    public static void main(String[] args) throws InterruptedException {
+        
+        ChromeDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://demowebshop.tricentis.com/");
+        Thread.sleep(2000);
+
+        // Books
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[2]/li[1]/a")).click();
+        Thread.sleep(2000);
+      
+
+        // Computers
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[2]/li[2]/a")).click();
+        Thread.sleep(2000);
+        
+
+        // Electronics
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[2]/li[3]/a")).click();
+        Thread.sleep(2000);
+        
+
+        // Apparel & Shoes
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[2]/li[4]/a")).click();
+        Thread.sleep(2000);
+       
+
+        // Digital downloads
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[2]/li[5]/a")).click();
+        Thread.sleep(2000);
+        
+
+        // Jewelry
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[2]/li[6]/a")).click();
+        Thread.sleep(2000);
+        
+
+        // Gift Cards
+        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[2]/li[7]/a")).click();
+        Thread.sleep(2000);
+
+        driver.close();
+    }
+}
