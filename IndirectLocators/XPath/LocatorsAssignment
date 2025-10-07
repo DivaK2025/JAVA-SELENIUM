@@ -1,0 +1,43 @@
+package Basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LocatorsAssignment {
+	
+	public static void main(String[]args)throws InterruptedException
+	{
+		
+		//READ PRICE OF ALL THE PRODUCTS BY USING DEPENDENT AND INDEPENDENT XPATH
+		
+		ChromeDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://demowebshop.tricentis.com/");
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("/html/body/div[4]/div[1]/div[2]/ul[1]/li[5]/a")).click();
+		Thread.sleep(1000);
+		
+
+		WebElement album = driver.findElement(By.xpath("//a[text()='3rd Album']/../../div[3]/div/span"));
+		System.out.println(album.getText());
+		Thread.sleep(1000);
+		
+		WebElement music = driver.findElement(By.xpath("//a[text()='Music 2']/../../div[3]/div/span"));
+		System.out.println(music.getText());
+		Thread.sleep(1000);
+		
+		WebElement music1 = driver.findElement(By.xpath("//a[@ href ='/music-2']/../../div[3]/div/span"));
+		System.out.println(music1.getText());
+		Thread.sleep(1000);
+		
+		
+		driver.close();
+		
+		
+	}
+
+}
