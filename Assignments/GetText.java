@@ -1,0 +1,27 @@
+package Basics;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GetText {
+	public static void main(String[] args) throws InterruptedException
+	{
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demowebshop.tricentis.com/");
+		Thread.sleep(3000);
+		WebElement cart = driver.findElement(By.className("ico-cart"));
+		System.out.println(cart.getText()); //Shopping Cart(0)
+		Thread.sleep(3000);
+		/*Drawback of linked text and partial link text is they will
+		 * only work on anchor tags 
+		 * so here we get error of NoSuchElementException
+		WebElement poll=driver.findElement(By.linkText("Community poll"));
+		System.out.println(poll.getText()); */
+		
+		Thread.sleep(3000);
+		driver.close();
+		
+	}
+}

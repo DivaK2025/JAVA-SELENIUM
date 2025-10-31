@@ -1,0 +1,64 @@
+package Basics;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+	public class CartVerification {
+		public static void main(String[] args) throws InterruptedException {
+			ChromeDriver driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://demowebshop.tricentis.com/books");
+			driver.findElement(By.xpath("//a[@href = '/login']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//input[@id = 'Email']")).sendKeys("nmankar017@gmail.com");
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//input[@id = 'Password']")).sendKeys("Ninad@123");
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//input[@type = 'checkbox']")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.cssSelector(".button-1.login-button")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.linkText("Build your own cheap computer")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.id("product_attribute_72_5_18_65")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.id("product_attribute_72_6_19_91")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.id("product_attribute_72_3_20_58")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.id("product_attribute_72_8_30_94")).click();
+			Thread.sleep(1000);
+			WebElement Qty = driver.findElement(By.id("addtocart_72_EnteredQuantity"));
+			Qty.click();
+			Qty.clear();
+			Qty.sendKeys("3");
+			driver.findElement(By.id("add-to-cart-button-72")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.linkText("Shopping cart")).click();
+			Thread.sleep(2000);
+
+			WebElement productName = driver.findElement(By.xpath("//a[@class='product-name']"));
+			//System.out.println(productName.getText());
+			String actualProduct = productName.getText();
+			System.out.println("Product in cart: " + actualProduct);
+
+			if (actualProduct.equalsIgnoreCase("Build your own cheap computer")) {
+			    System.out.println("Product successfully added to cart!");
+			} else {
+			    System.out.println("Product not found in cart!");
+			}
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//a[contains(text(), 'Digital downloads')]")).click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.cssSelector(".button-2.product-box-add-to-cart-button")).click();
+//			Thread.sleep(1000);
+//			driver.findElement(By.xpath("//span[contains(text(), 'Shopping cart')]")).click();
+//			Thread.sleep(5000);
+//			driver.close();
+			
+		}
+	}
+
+
+
